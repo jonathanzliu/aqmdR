@@ -36,3 +36,9 @@
 #' @format A named vector 
 #' @details
 "voc_mw"
+
+#' @title Domain stack
+#' @description NetCDF file (read by ncdf4) with points used to align CMAQ output to a grid when calculating emissions
+#' @format An object of class `ncdf4`
+#' @details To be used when calculating emissions from CMAQ output. The fields `COLPTc` and `ROWPTc` are used after emissions have been summed together and "flattened" from a 2D matrix to a 1D vector.
+"stackf"
