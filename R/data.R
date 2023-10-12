@@ -30,3 +30,9 @@
 #'}
 #' @details 156x102 grid, matching the output from CMAQ. Does not contain any air quality data, but is to be used as a "mask" to append geospatial information to CMAQ output. 
 "sc_grid"
+
+#' @title Volatile Organic Compound (VOC) molecular weights
+#' @description A vector of commonly-used VOC acronyms and their corresponding molecular weights
+#' @format A named vector 
+#' @details
+"voc_mw"
