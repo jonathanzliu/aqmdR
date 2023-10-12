@@ -4,7 +4,7 @@
 #' \describe{
 #'   \item{\code{geometry}}{list Polygon geometry} 
 #'}
-#' @details
+#' @details Single polygon of South Coast Air Basin boundaries. Excludes Catalina Island.
 "south_coast"
 
 #' @title AB617 Communities
@@ -14,7 +14,7 @@
 #'   \item{\code{Name}}{character Community name}
 #'   \item{\code{geometry}}{list Polygon geometry} 
 #'}
-#' @details
+#' @details Boundaries of vulnerable communities.
 "ab617"
 
 #' @title South Coast Grid
@@ -34,7 +34,7 @@
 #' @title Volatile Organic Compound (VOC) molecular weights
 #' @description A vector of commonly-used VOC acronyms and their corresponding molecular weights
 #' @format A named vector 
-#' @details
+#' @details Named vector of VOCs and their molecular weights.
 "voc_mw"
 
 #' @title Domain stack
