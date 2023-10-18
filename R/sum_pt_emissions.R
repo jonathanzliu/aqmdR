@@ -7,7 +7,7 @@
 #' @import ncdf4
 #' @export
 
-sum_pt_emissions <- function(cmaq_ncdf, nox = F, sox = F, voc = F) {
+sum_pt_emissions <- function(cmaq_ncdf, nox = F, sox = F, voc = F, grid = F) {
   
   ROWPTc <- aqmdR::ROWPTc_pt
   COLPTc <- aqmdR::COLPTc_pt
@@ -95,6 +95,9 @@ sum_pt_emissions <- function(cmaq_ncdf, nox = F, sox = F, voc = F) {
     summed_emissions$VOC = voc_emissions
   }
 
+  if(grid) {
+    summed_emissions <- aqmdR::grid_to_sf(summed_emissions)
+  }
   
   return(summed_emissions)
 }

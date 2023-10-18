@@ -4,7 +4,7 @@
 \alias{grid_to_sf}
 \title{Grid to SF;}
 \usage{
-grid_to_sf(sum_emissions, pollutant)
+grid_to_sf(sum_emissions)
 }
 \arguments{
 \item{sum_emissions}{Summed emissions in a 156x102 grid, generated, for example from the function \code{sum_pt_emissions}}
