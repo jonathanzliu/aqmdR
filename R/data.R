@@ -40,5 +40,11 @@
 #' @title Domain stack
 #' @description Matrix used to 
 #' @format An object of class `ncdf4`
-#' @details To be used when calculating emissions from CMAQ output. The fields `COLPTc` and `ROWPTc` are used after emissions have been summed together and "flattened" from a 2D matrix to a 1D vector.
-"ROWPTc"
+#' @details To be used when calculating emissions from CMAQ output. The fields `COLPTc_pt` and `ROWPTc_pt` are used after emissions have been summed together and "flattened" from a 2D matrix to a 1D vector.
+"ROWPTc_pt"
+
+#' @title Domain stack
+#' @description Matrix used to 
+#' @format An object of class `ncdf4`
+#' @details To be used when calculating emissions from CMAQ output. The fields `COLPTc_pt` and `ROWPTc_pt` are used after emissions have been summed together and "flattened" from a 2D matrix to a 1D vector.
+"COLPTc_pt"

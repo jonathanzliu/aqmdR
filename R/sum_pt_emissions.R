@@ -33,7 +33,7 @@ sum_pt_emissions <- function(cmaq_ncdf) {
   
   print("Summing VOC emissions")
   
-  data(voc_mw)
+  voc_mw <- aqmdR::voc_mw
   voc <- names(voc_mw)
   
   voc_emissions <- lapply(voc, \(x) { # sum and consolidate emissions from VOCs
