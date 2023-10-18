@@ -5,7 +5,7 @@
 #' @import sf
 #' @export
 
-grid_to_sf <- function(sum_emissions, pollutant) {
+grid_to_sf <- function(sum_emissions) {
   
   grid <- aqmdR::sc_grid
   
