@@ -26,6 +26,7 @@ sum_pt_emissions <- function(cmaq_ncdf, nox = F, sox = F, voc = F) {
       as.numeric((.))
     
     NOXc <- array(rep(0), dim = c(156, 102))
+    
     for (i in 1:length(ROWPTc)) {
       NOXc[COLPTc[i], ROWPTc[i]] <- NOXPTc[i] + NOXc[COLPTc[i], ROWPTc[i]]
 
@@ -49,7 +50,7 @@ sum_pt_emissions <- function(cmaq_ncdf, nox = F, sox = F, voc = F) {
       SOXc[COLPTc[i], ROWPTc[i]] <- SOXPTc[i] + SOXc[COLPTc[i], ROWPTc[i]]
     }
     
-    summed_emissions$sox <- SOxc
+    summed_emissions$sox <- SOXc
     
   }
 
