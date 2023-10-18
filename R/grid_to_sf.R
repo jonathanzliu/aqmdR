@@ -7,14 +7,15 @@
 
 grid_to_sf <- function(sum_emissions, pollutant) {
   
-  df <- sum_emissions
-  
-  IX <- nrow(df)
-  IY <- ncol(df)
-  
   grid <- aqmdR::sc_grid
   
-  for(k in length(pollutant)) {
+  pollutant <- names(sum_emissions)
+  
+  for(k in 1:length(pollutant)) {
+    
+    df <- sum_emissions[[pollutant[k]]]
+    IX <- nrow(df)
+    IY <- ncol(df)
     
     grid[pollutant[k]] <- 999
     
@@ -25,7 +26,6 @@ grid_to_sf <- function(sum_emissions, pollutant) {
         grid[[pollutant[k]]][(which(grid$IY == j & grid$IX == i))] <- df[i,j]
         
       }
-      
     }
   }
   
