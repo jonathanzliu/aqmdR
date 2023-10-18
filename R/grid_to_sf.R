@@ -3,6 +3,7 @@
 #' @param sum_emissions Summed emissions in a 156x102 grid, generated, for example from the function `sum_pt_emissions`
 #' @param pollutant Pollutant of interest
 #' @import sf
+#' @export
 
 grid_to_sf <- function(sum_emissions, pollutant) {
   

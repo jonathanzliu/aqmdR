@@ -2,6 +2,7 @@
 #' @description function to input CMAQ-generated 24-hour point-source emissions data, and output list of summed 156x102 (South Coast Air Basin grid) arrays with summed emissions for NOx, SOx, and VOC emissions
 #' @param cmaq_ncdf grid file with 4km x 4km resolution over the South Coast Air Basin domain
 #' @import ncdf4
+#' @export
 
 sum_pt_emissions <- function(cmaq_ncdf) {
   
