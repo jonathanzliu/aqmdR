@@ -69,7 +69,7 @@ sum_pt_emissions <- function(cmaq_ncdf) {
     .[sapply(., is.double)] %>% 
     Reduce(`+`, .)
   
-  summed_emissions <- list(NOx = NOXc, SOx = SOxc, VOC = voc_emissions)
+  summed_emissions <- list(NOx = NOXc, SOx = SOXc, VOC = voc_emissions)
   
   return(summed_emissions)
 }
