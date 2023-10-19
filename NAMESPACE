@@ -2,7 +2,10 @@
 
 export("%>%")
 export(grid_to_sf)
+export(plot_grid)
 export(sum_pt_emissions)
+import(basemapR)
+import(ggplot2)
 import(ncdf4)
 import(sf)
 importFrom(magrittr,"%>%")

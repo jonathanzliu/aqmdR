@@ -4,7 +4,7 @@
 \alias{sum_pt_emissions}
 \title{Sum point source emissions}
 \usage{
-sum_pt_emissions(cmaq_ncdf, nox = F, sox = F, voc = F)
+sum_pt_emissions(cmaq_ncdf, nox = F, sox = F, voc = F, grid = F)
 }
 \arguments{
 \item{cmaq_ncdf}{grid file with 4km x 4km resolution over the South Coast Air Basin domain}
