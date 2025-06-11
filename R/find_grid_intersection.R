@@ -13,15 +13,17 @@
 #' 
 #' 
 #' 
-find_grid_intersection <- function(points, grid = sc_grid) {
+find_grid_intersection <- function(points, grid) {
   intersection <- st_intersects(points, grid)
   
-  points$grid_id <- NA
-  for (i in seq_along(intersection)) {
-    if (length(intersection[[i]]) > 0) {
-      points$grid_id[i] <- intersection[[i]][1]
-    }
-  }
+  grid <- aqmdR::sc_grid
+  
+  points_filtered <- points %>%
+    filter(!is.na(grid_id)) %>% 
+    mutate(
+      IX = sapply(.$grid_id, \(x) return(sc_grid[x,]$IX)),
+      IY = sapply(.$grid_id, \(x) return(sc_grid[x,]$IY)),
+    )
   
   points_filtered <- points %>%
     filter(!is.na(grid_id))
