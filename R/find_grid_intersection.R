@@ -32,9 +32,6 @@ find_grid_intersection <- function(points, grid) {
       IY = sapply(.$grid_id, \(x) return(sc_grid[x,]$IY)),
     )
   
-  points_filtered <- points %>%
-    filter(!is.na(grid_id))
-  
   return(points_filtered)
 }
 
