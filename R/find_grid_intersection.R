@@ -11,8 +11,7 @@
 #' @return An sf object with a new column `grid_id` representing the ID of the intersecting grid cell.
 #' @export
 #' 
-#' 
-#' 
+
 find_grid_intersection <- function(points, grid) {
   intersection <- st_intersects(points, grid)
   
