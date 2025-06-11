@@ -12,9 +12,8 @@
 #' @export
 #' 
 
-find_grid_intersection <- function(points, grid) {
+find_grid_intersection <- function(points, grid = aqmdR::sc_grid) {
   
-  grid <- aqmdR::sc_grid
   intersection <- st_intersects(points, grid)
   
   points$grid_id <- NA
