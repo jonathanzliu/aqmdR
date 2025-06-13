@@ -48,3 +48,28 @@
 #' @format An object of class `ncdf4`
 #' @details To be used when calculating emissions from CMAQ output. The fields `COLPTc_pt` and `ROWPTc_pt` are used after emissions have been summed together and "flattened" from a 2D matrix to a 1D vector.
 "COLPTc_pt"
+
+#' @title California Counties
+#' @description sf object of California county boundaries
+#' @format A data frame with 58 rows and 18 variables:
+#' \describe{
+#'   \item{\code{STATEFP}}{character FIPS code for state}
+#'   \item{\code{COUNTYFP}}{character FIPS code for county}
+#'   \item{\code{COUNTYNS}}{character Unique numeric code for county}
+#'   \item{\code{GEOID}}{character FIPS code for county (state + county)}
+#'   \item{\code{NAME}}{character County name}
+#'   \item{\code{NAMELSAD}}{character County name and legal/statistical area description}
+#'   \item{\code{LSAD}}{character Legal/statistical area description code}
+#'   \item{\code{CLASSFP}}{character Feature class code}
+#'   \item{\code{MTFCC}}{character MAF/TIGER feature class code}
+#'   \item{\code{CSAFP}}{character Consolidated statistical area FIPS code}
+#'   \item{\code{CBSAFP}}{character Core based statistical area FIPS code}
+#'   \item{\code{METDIVFP}}{character Metropolitan division FIPS code}
+#'   \item{\code{FUNCSTAT}}{character Functional status code}
+#'   \item{\code{ALAND}}{numeric Land area (square meters)}
+#'   \item{\code{AWATER}}{numeric Water area (square meters)}
+#'   \item{\code{INTPTLAT}}{character Latitude of the internal point}
+#'   \item{\code{INTPTLON}}{character Longitude of the internal point}
+#'   \item{\code{geometry}}{list Polygon geometry}
+#' }
+"ca_counties"
