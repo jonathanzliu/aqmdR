@@ -4,7 +4,7 @@
 \alias{find_grid_intersection}
 \title{Find grid intersection;}
 \usage{
-find_grid_intersection(points, grid)
+find_grid_intersection(points, grid = aqmdR::sc_grid)
 }
 \arguments{
 \item{points}{An sf object representing point locations.}
