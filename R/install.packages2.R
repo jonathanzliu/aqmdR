@@ -29,6 +29,8 @@
 #'   5. Copies the downloaded tarballs from the remote server to the local machine using `pscp`.
 #'   6. Installs the copied packages locally from source, respecting dependencies.
 #'   7. Cleans up by removing the downloaded tarball files from the local working directory.
+#'   
+#' @export
 
 
 

@@ -3,6 +3,7 @@
 export("%>%")
 export(find_grid_intersection)
 export(grid_to_sf)
+export(install_package2)
 export(plot_grid)
 export(sum_pt_emissions)
 import(basemapR)

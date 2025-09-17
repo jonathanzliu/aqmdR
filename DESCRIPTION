@@ -15,7 +15,10 @@ LazyData: true
 Imports: 
     magrittr,
     ncdf4,
-    sf
+    sf,
+    dplyr,
+    ggplot2,
+    basemapR
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
