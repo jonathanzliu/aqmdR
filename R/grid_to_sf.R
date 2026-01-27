@@ -5,31 +5,49 @@
 #' @import sf
 #' @export
 
-grid_to_sf <- function(sum_emissions) {
+grid_to_sf <-  function(sum_emissions, basin_only = TRUE) {
   
   grid <- aqmdR::sc_grid
   
+  if(basin_only) {
+    grid <- grid %>% 
+      st_crop(south_coast) 
+  }
+  
+  grid <- grid %>% 
+    st_set_geometry(NULL)
+  
   pollutant <- names(sum_emissions)
   
-  for(k in 1:length(pollutant)) {
+  IX <- nrow(sum_emissions[[1]])
+  IY <- ncol(sum_emissions[[1]])
+  
+  for(l in 1:length(pollutant)) {
+    grid[pollutant[l]] <- NA
     
-    df <- sum_emissions[[pollutant[k]]]
-    IX <- nrow(df)
-    IY <- ncol(df)
-    
-    grid[pollutant[k]] <- 999
-    
-    for(i in 1:IX) {
-      
-      for(j in 1:IY) {
-
-        grid[[pollutant[k]]][(which(grid$IY == j & grid$IX == i))] <- df[i,j]
-        
-      }
-    }
   }
+  
+  for(i in 1:nrow(grid)) {
+    
+    row <- grid[i,]
+    x <- row$IX
+    y <- row$IY
+    
+    print(i)
+    
+    for(j in 1:length(pollutant)) {
+      
+      df <- sum_emissions[[pollutant[j]]]
+      grid[[pollutant[j]]][i] <- df[x,y]
+      
+      
+    }
+    
+  }
+  
+  grid <- left_join(grid, sc_grid) %>% 
+    st_as_sf()
   
   return(grid)
   
 }
-
