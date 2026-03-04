@@ -2,15 +2,26 @@
 % Please edit documentation in R/grid_to_sf.R
 \name{grid_to_sf}
 \alias{grid_to_sf}
-\title{Grid to SF;}
+\title{Convert Gridded Emissions to SF Object}
 \usage{
-grid_to_sf(sum_emissions)
+grid_to_sf(sum_emissions, basin_only = TRUE)
 }
 \arguments{
-\item{sum_emissions}{Summed emissions in a 156x102 grid, generated, for example from the function \code{sum_pt_emissions}}
+\item{sum_emissions}{A list of numeric matrices, where each matrix represents
+emission values for a specific pollutant. The names of the list elements
+should be the pollutant names. Each matrix is indexed by \code{IX} (row index)
+and \code{IY} (column index) corresponding to the \code{aqmdR::sc_grid}.}
 
-\item{pollutant}{Pollutant of interest}
+\item{basin_only}{A logical value. If \code{TRUE} (default), the \code{sc_grid} is
+cropped to the extent of the \code{south_coast} object before assigning emissions.}
+}
+\value{
+An \code{sf} object where each row represents a grid cell from \code{sc_grid}
+and includes columns for each pollutant's emission value, along with
+the original grid attributes and geometry.
 }
 \description{
-Turns a 156x102 array -- usually emissions summed from CMAQ output -- into a sf object to be used for mapping/plotting. Uses a simple loop to add in emissions data into a template (\code{aqmdR::sc_grid}), and returns the resulting object with a \code{geometry} field. Output files are typically \code{.mat} files, which require the package \code{R.matlab} to read into R.
+Transforms a list of gridded emission matrices into a spatial features (sf) object.
+It maps emission values from specified grid coordinates (IX, IY) onto a
+spatial grid, optionally cropping it to the South Coast Air Basin.
 }
