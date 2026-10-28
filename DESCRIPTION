@@ -11,13 +11,23 @@ RoxygenNote: 7.3.3
 Depends: 
     R (>= 2.10)
 LazyData: true
-Imports: 
+Imports:
     magrittr,
     ncdf4,
     sf,
     dplyr,
     ggplot2,
-    basemapR
-Suggests: 
+    basemapR,
+    data.table,
+    leaflet,
+    oce,
+    readr,
+    rvest,
+    stringr,
+    utils,
+    viridis
+Suggests:
+    jsonlite,
+    plotly,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
